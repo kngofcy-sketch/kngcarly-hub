@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KNG_CARLY — Official Electronic Press Kit (EPK)</title>
+  <meta name="description" content="Kit de prensa oficial de KNG_CARLY. Latin Trap & Urban Drill desde Miami/Hialeah. Biografía, métricas, rider técnico y contacto de booking.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --card-bg: #141414;
+      --border: #222222;
+      --gold: #d4af37;
+      --gold-hover: #b89628;
+      --text: #ffffff;
+      --text-muted: #a0a0a0;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      padding: 0 1.25rem 4rem 1.25rem;
+    }
+    header {
+      max-width: 1000px;
+      margin: 2rem auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2rem;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.35rem 0.85rem;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.75rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+    .subhead {
+      color: var(--text-muted);
+      font-size: 1rem;
+      max-width: 600px;
+      margin-bottom: 1.5rem;
+    }
+    .cta-container {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+    .btn-gold {
+      background-color: var(--gold);
+      color: #000;
+    }
+    .btn-gold:hover {
+      background-color: var(--gold-hover);
+    }
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--text);
+      background-color: #1a1a1a;
+    }
+    .btn-outline:hover {
+      border-color: var(--gold);
+    }
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+    section {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+    }
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.4rem;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    p {
+      color: #d1d1d1;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .stat-box {
+      background-color: #0d0d0d;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .stat-number {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.25rem;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+    .stat-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.3;
+    }
+    .table-container {
+      overflow-x: auto;
+      margin-top: 1rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      text-align: left;
+    }
+    th, td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      background-color: #0d0d0d;
+      color: var(--gold);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+    td {
+      color: #e0e0e0;
+    }
+    .tag-status {
+      display: inline-block;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .tag-upcoming {
+      background: rgba(212, 175, 55, 0.15);
+      color: var(--gold);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+    .tag-live {
+      background: rgba(40, 167, 69, 0.15);
+      color: #28a745;
+      border: 1px solid rgba(40, 167, 69, 0.3);
+    }
+    ul {
+      list-style: none;
+    }
+    li {
+      margin-bottom: 0.75rem;
+      padding-left: 1.25rem;
+      position: relative;
+      color: #d1d1d1;
+      font-size: 0.95rem;
+    }
+    li::before {
+      content: "•";
+      color: var(--gold);
+      position: absolute;
+      left: 0;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+    footer {
+      max-width: 1000px;
+      margin: 3rem auto 0 auto;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      section { padding: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="badge">Electronic Press Kit</div>
+    <h1>KNG_CARLY</h1>
+    <p class="subhead">Latin Trap & Urban Drill | Miami / Hialeah, FL | Distribución Oficial: Soundbirth</p>
+    <div class="cta-container">
+      <a href="https://drive.google.com/drive/folders/1MvgtmKK_gf-MUJmcmEniyU4i2kesKer5?usp=sharing" target="_blank" class="btn btn-gold">
+        Descargar Media Assets & One-Sheet (Drive)
+      </a>
+      <a href="https://kngcarly.com" class="btn btn-outline">
+        Ir al Sitio Web Oficial
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- BIO SECTION -->
+    <section>
+      <h2>01. Pitch de Prensa & Biografía</h2>
+      <p><strong>KNG_CARLY</strong> es un artista y productor independiente cubano radicado en Hialeah, Miami, que redefine el Latin Trap y Urban Drill mediante una fórmula implacable: 808s pesados, baterías cortantes y una narrativa cruda basada en disciplina, superación y realidad de calle, influenciada por la densidad lírica de autores como Melendi o Ricardo Arjona.</p>
+      <p>Tras irrumpir con fuerza orgánica gracias al impacto de <em>"Niveles"</em> —respaldado directamente por curadores y su distribuidora Soundbirth— y viralizar contenido que supera las 220,000 visualizaciones en redes, KNG_CARLY consolida una propuesta independiente con estándar de grandes ligas, encabezada por sus próximos estrenos oficiales: <strong>"El Ungido" (11 de Septiembre)</strong> y <strong>"Decisiones" (18 de Septiembre)</strong>.</p>
+    </section>
+
+    <!-- METRICS SECTION -->
+    <section>
+      <h2>02. Métricas & Impacto Orgánico</h2>
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-number">+220K</div>
+          <div class="stat-label">Facebook</div>
+          <div class="stat-desc">Vistas orgánicas en tributo a Prichard Colón (+12K reacciones, +1.6K shares).</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">+13.5K</div>
+          <div class="stat-label">YouTube</div>
+          <div class="stat-desc">Visualizaciones totales acumuladas con picos en Shorts en menos de 24h.</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">+3K</div>
+          <div class="stat-label">TikTok</div>
+          <div class="stat-desc">Reproducciones e interacciones de audio orgánicas generadas por "Niveles".</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">Editorial</div>
+          <div class="stat-label">Soundbirth</div>
+          <div class="stat-desc">Inclusión en playlist oficial, feedback directo y distribución garantizada.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RELEASES TABLE -->
+    <section>
+      <h2>03. Catálogo & Calendario de Estrenos</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Track</th>
+              <th>Género</th>
+              <th>Fecha / Estado</th>
+              <th>Detalles</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>EL UNGIDO</strong></td>
+              <td>Latin Trap / Drill</td>
+              <td><span class="tag-status tag-upcoming">11 Septiembre</span></td>
+              <td>Soundbirth Premier. Enfoque conceptual pesado de alto impacto.</td>
+            </tr>
+            <tr>
+              <td><strong>DECISIONES</strong></td>
+              <td>Drill Puro / Storytelling</td>
+              <td><span class="tag-status tag-upcoming">18 Septiembre</span></td>
+              <td>Soundbirth Premier. Narrativa cruda y reflexiva.</td>
+            </tr>
+            <tr>
+              <td><strong>NIVELES</strong></td>
+              <td>Latin Trap</td>
+              <td><span class="tag-status tag-live">Disponible</span></td>
+              <td>Sencillo insignia; detonó tracción viral en TikTok y playlisting oficial.</td>
+            </tr>
+            <tr>
+              <td><strong>NO ME VEN</strong></td>
+              <td>Urban Drill</td>
+              <td><span class="tag-status tag-live">Disponible</span></td>
+              <td>Lírica cruda sobre disciplina y superación de calle.</td>
+            </tr>
+            <tr>
+              <td><strong>POR CUBA</strong></td>
+              <td>Latin Trap</td>
+              <td><span class="tag-status tag-live">Disponible</span></td>
+              <td>Tributo de raíz con narrativa de identidad y resistencia.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- RIDER & LIVE SETUP -->
+    <section>
+      <h2>04. Especificaciones en Vivo (Rider Técnico)</h2>
+      <ul>
+        <li><strong>Microfonía:</strong> 1x Micrófono inalámbrico UHF profesional de mano (Shure SM58 / Beta 58A o equivalente).</li>
+        <li><strong>Monitoreo:</strong> Sistema estéreo de piso con respuesta en subgraves (808) o transmisor inalámbrico IEM.</li>
+        <li><strong>Playback / Pistas:</strong> 1x Conexión DI estéreo directa para reproducción en WAV (sin compresión).</li>
+        <li><strong>Alineación en Tarima:</strong> 1 Artista vocal principal + 1 DJ / Operador técnico de pista.</li>
+      </ul>
+    </section>
+
+    <!-- CONTACT & PLATFORMS SECTION -->
+    <section>
+      <h2>05. Booking, Prensa & Enlaces Oficiales</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+        <div>
+          <h3 style="color: #fff; font-size: 1rem; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Contacto Directo</h3>
+          <ul>
+            <li><strong>Booking & Contrataciones:</strong> <a href="mailto:booking@kngcarly.com" style="color:var(--gold); text-decoration:none;">booking@kngcarly.com</a></li>
+            <li><strong>Teléfono / WhatsApp:</strong> +1 (305) 680-4785</li>
+            <li><strong>Sitio Web Oficial:</strong> <a href="https://kngcarly.com" style="color:var(--gold); text-decoration:none;">kngcarly.com</a></li>
+            <li><strong>Carpeta de Prensa (Drive):</strong> <a href="https://drive.google.com/drive/folders/1MvgtmKK_gf-MUJmcmEniyU4i2kesKer5?usp=sharing" target="_blank" style="color:var(--gold); text-decoration:none;">Descargar Media Assets (PDF + Fotos)</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="color: #fff; font-size: 1rem; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Plataformas & Redes Oficiales</h3>
+          <ul>
+            <li><strong>Bandsintown (Live & Tour):</strong> <a href="url?id=156" target="_blank" style="color:var(--gold); text-decoration:none;">Perfil de Giras KNG_CARLY</a></li>
+            <li><strong>Amazon Music:</strong> <a href="url?id=158" target="_blank" style="color:var(--gold); text-decoration:none;">Escuchar en Amazon Music</a></li>
+            <li><strong>SoundCloud:</strong> <a href="url?id=175" target="_blank" style="color:var(--gold); text-decoration:none;">soundcloud.com/kng_carly-music</a></li>
+            <li><strong>Facebook Oficial:</strong> <a href="url?id=162" target="_blank" style="color:var(--gold); text-decoration:none;">facebook.com/61586276647304</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 KNG_CARLY. Todos los derechos reservados. Distribución exclusiva vía Soundbirth.</p>
+  </footer>
+
+</body>
+</html>
