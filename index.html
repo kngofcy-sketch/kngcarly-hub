@@ -3,9 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KNG_CARLY | Official Hub & Music</title>
-  <meta name="description" content="KNG_CARLY - Hub Oficial de Enlaces, Latin Trap & Urban Drill. Catálogo musical, preview exclusivo y plataformas.">
+  <title>KNG_CARLY | Latin Trap & Urban Drill</title>
+  <meta name="description" content="KNG_CARLY - Sitio Oficial & Hub de Enlaces. Latin Trap, Urban Drill, catálogo musical, visualizers y acceso exclusivo.">
   
+  <!-- Schema.org Datos Estructurados para Google & Knowledge Graph -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "@id": "https://kngcarly.com/#artist",
+    "name": "KNG_CARLY",
+    "url": "https://kngcarly.com/",
+    "genre": [
+      "Latin Trap",
+      "Urban Drill",
+      "Reggaeton"
+    ],
+    "description": "Artista y productor independiente de Latin Trap y Urban Drill.",
+    "email": "booking@kngcarly.com",
+    "sameAs": [
+      "https://open.spotify.com/artist/30G2H8ztahiXqfKm7Xa8GQ",
+      "https://music.apple.com/us/artist/kng-carly/1862196988",
+      "https://www.youtube.com/@THE_KNG_CARLY",
+      "https://www.tiktok.com/@kng_carly",
+      "https://www.instagram.com/kng_carly_/"
+    ],
+    "track": [
+      {
+        "@type": "MusicRecording",
+        "name": "NIVELES",
+        "byArtist": {
+          "@type": "MusicGroup",
+          "name": "KNG_CARLY"
+        }
+      },
+      {
+        "@type": "MusicRecording",
+        "name": "NO ME VEN",
+        "byArtist": {
+          "@type": "MusicGroup",
+          "name": "KNG_CARLY"
+        }
+      },
+      {
+        "@type": "MusicRecording",
+        "name": "POR CUBA",
+        "byArtist": {
+          "@type": "MusicGroup",
+          "name": "KNG_CARLY"
+        }
+      }
+    ]
+  }
+  </script>
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   
@@ -37,300 +88,353 @@
   </script>
 
   <style>
-    /* Efecto ecualizador nativo cuando reproduce audio */
+    /* Efecto ecualizador de audio */
     .bar {
       width: 3px;
-      height: 6px;
+      height: 14px;
       background-color: #E11D48;
-      transition: height 0.2s ease;
-    }
-    .playing .bar {
-      animation: sound 1.1s infinite ease-in-out alternate;
+      animation: sound 1.2s infinite ease-in-out alternate;
     }
     @keyframes sound {
-      0% { height: 4px; opacity: 0.4; }
-      100% { height: 20px; opacity: 1; }
+      0% { height: 4px; opacity: 0.3; }
+      100% { height: 18px; opacity: 1; }
     }
-    .playing .bar:nth-child(2) { animation-delay: 0.2s; }
-    .playing .bar:nth-child(3) { animation-delay: 0.4s; }
-    .playing .bar:nth-child(4) { animation-delay: 0.15s; }
-    .playing .bar:nth-child(5) { animation-delay: 0.35s; }
-
-    /* Barra de progreso de audio nativa */
-    input[type=range]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      height: 12px;
-      width: 12px;
-      border-radius: 50%;
-      background: #E11D48;
-      cursor: pointer;
-    }
+    .bar:nth-child(2) { animation-delay: 0.2s; }
+    .bar:nth-child(3) { animation-delay: 0.4s; }
+    .bar:nth-child(4) { animation-delay: 0.1s; }
+    .bar:nth-child(5) { animation-delay: 0.5s; }
   </style>
 </head>
-<body class="bg-kngDark text-zinc-100 font-sans antialiased selection:bg-kngRed selection:text-white pb-32">
+<body class="bg-kngDark text-zinc-100 font-sans antialiased selection:bg-kngRed selection:text-white pb-24">
 
-  <main class="max-w-xl mx-auto px-4 py-8 space-y-6">
+  <!-- TOP NAVBAR -->
+  <header class="w-full border-b border-kngBorder bg-kngDark/95 backdrop-blur sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8 py-3 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="font-headline font-black text-2xl tracking-tighter text-white uppercase flex items-center gap-1">
+        KNG<span class="text-kngRed">_</span>CARLY
+      </a>
 
-    <!-- HEADER / IDENTIDAD DE ARTISTA -->
-    <header class="text-center space-y-3">
-      <div class="relative w-28 h-28 mx-auto">
-        <div class="w-full h-full rounded-full border-2 border-kngBorder bg-gradient-to-tr from-zinc-950 via-zinc-900 to-kngCard flex items-center justify-center shadow-2xl overflow-hidden p-1">
-          <!-- Si tienes foto tuya o logo, puedes reemplazar este span por <img src="..." class="w-full h-full object-cover rounded-full"> -->
-          <span class="font-headline font-black text-2xl tracking-tighter text-white">
-            KNG<span class="text-kngRed">_</span>CARLY
-          </span>
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-6 text-xs font-bold uppercase tracking-wider text-zinc-400">
+        <a href="#hero" class="hover:text-white transition">Inicio</a>
+        <a href="#quick-links" class="hover:text-white transition">Links</a>
+        <a href="#music" class="hover:text-white transition">Música</a>
+        <a href="#gallery" class="hover:text-white transition">Galería</a>
+        <a href="#kingdom-pass" class="hover:text-white transition">Kingdom Pass</a>
+        <a href="#contact" class="hover:text-white transition">Contacto</a>
+      </nav>
+
+      <!-- Social Icons & VIP Button -->
+      <div class="flex items-center gap-3 sm:gap-4">
+        <div class="flex items-center gap-2.5 text-zinc-400 text-sm">
+          <a href="https://open.spotify.com/artist/30G2H8ztahiXqfKm7Xa8GQ" target="_blank" rel="noopener" class="hover:text-green-500 transition"><i class="fa-brands fa-spotify"></i></a>
+          <a href="https://music.apple.com/us/artist/kng-carly/1862196988" target="_blank" rel="noopener" class="hover:text-white transition"><i class="fa-brands fa-apple"></i></a>
+          <a href="https://www.youtube.com/@THE_KNG_CARLY" target="_blank" rel="noopener" class="hover:text-red-500 transition"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.tiktok.com/@kng_carly" target="_blank" rel="noopener" class="hover:text-cyan-400 transition"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="https://www.instagram.com/kng_carly_/" target="_blank" rel="noopener" class="hover:text-pink-500 transition"><i class="fa-brands fa-instagram"></i></a>
         </div>
-        <span class="absolute bottom-1 right-1 w-4 h-4 rounded-full bg-kngRed border-2 border-kngDark" title="Verificado"></span>
-      </div>
 
-      <div>
-        <h1 class="font-headline font-black text-3xl sm:text-4xl uppercase tracking-tight text-white leading-none">
+        <a href="#kingdom-pass" class="bg-kngRed hover:bg-red-700 text-white font-black text-[11px] uppercase tracking-widest px-3 py-1.5 rounded transition shadow-md shadow-kngRed/20">
+          VIP ACCESS
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="relative w-full border-b border-kngBorder overflow-hidden bg-gradient-to-b from-zinc-950 to-kngDark py-12 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      
+      <!-- Columna Principal -->
+      <div class="lg:col-span-7 space-y-4">
+        <div class="flex items-center gap-2">
+          <span class="text-kngRed font-bold text-xs uppercase tracking-widest">THE KINGDOM</span>
+          <span class="h-0.5 w-6 bg-kngRed"></span>
+        </div>
+        
+        <h1 class="font-headline font-black text-5xl sm:text-7xl lg:text-8xl tracking-tight uppercase leading-none text-white">
           KNG CARLY
         </h1>
-        <p class="text-xs text-zinc-400 font-bold uppercase tracking-widest mt-1.5">
-          LATIN TRAP • URBAN DRILL
+
+        <div class="inline-block bg-kngBorder/60 border border-kngBorder px-3 py-1 rounded">
+          <p class="font-headline font-extrabold text-sm sm:text-base uppercase tracking-widest text-zinc-300">
+            URBAN LATIN <span class="bg-kngRed text-white px-1.5 py-0.5 rounded-sm">DRILL</span>
+          </p>
+        </div>
+
+        <p class="text-zinc-400 text-xs sm:text-sm max-w-xl leading-relaxed pt-2">
+          Latin Trap crudo y Drill underground. Producción independiente de nivel industrial hecha para la calle y sin intermediarios.
         </p>
-      </div>
 
-      <!-- Iconos Rápidos de Redes Sociales -->
-      <div class="flex items-center justify-center gap-4 text-zinc-400 text-lg pt-1">
-        <a href="https://open.spotify.com/intl-es/artist/30G2H8ztahiXqfKm7Xa8GQ" target="_blank" rel="noopener" class="hover:text-emerald-400 transition"><i class="fa-brands fa-spotify"></i></a>
-        <a href="https://music.apple.com/us/artist/kng-carly/1862196988" target="_blank" rel="noopener" class="hover:text-white transition"><i class="fa-brands fa-apple"></i></a>
-        <a href="https://www.youtube.com/@THE_KNG_CARLY" target="_blank" rel="noopener" class="hover:text-red-500 transition"><i class="fa-brands fa-youtube"></i></a>
-        <a href="https://www.tiktok.com/@kng_carly" target="_blank" rel="noopener" class="hover:text-cyan-400 transition"><i class="fa-brands fa-tiktok"></i></a>
-        <a href="https://www.instagram.com/kng_carly_/" target="_blank" rel="noopener" class="hover:text-pink-500 transition"><i class="fa-brands fa-instagram"></i></a>
-      </div>
-    </header>
-
-    <!-- REPRODUCTOR DE AUDIO NATIVO (PREVIEW IN-PAGE) -->
-    <section class="bg-kngCard border border-kngBorder rounded-2xl p-5 shadow-2xl space-y-3">
-      <div class="flex items-center justify-between">
-        <div class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-kngRed animate-ping"></span>
-          <span class="text-[10px] font-black uppercase tracking-widest text-kngRed">PREVIEW NATIVO</span>
-        </div>
-        <div id="equalizer" class="flex items-center gap-1">
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap gap-3 pt-3">
+          <a href="https://open.spotify.com/artist/30G2H8ztahiXqfKm7Xa8GQ" target="_blank" rel="noopener" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider px-4 py-3 rounded-lg transition flex items-center gap-2 shadow-lg shadow-emerald-950">
+            <i class="fa-brands fa-spotify text-base"></i> Escuchar en Spotify
+          </a>
+          <a href="https://music.apple.com/us/artist/kng-carly/1862196988" target="_blank" rel="noopener" class="bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-xs uppercase tracking-wider px-4 py-3 rounded-lg transition flex items-center gap-2 border border-zinc-700">
+            <i class="fa-brands fa-apple text-base"></i> Apple Music
+          </a>
+          <a href="https://www.youtube.com/@THE_KNG_CARLY?sub_confirmation=1" target="_blank" rel="noopener" class="bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider px-4 py-3 rounded-lg transition flex items-center gap-2">
+            <i class="fa-brands fa-youtube text-base"></i> Canal Oficial
+          </a>
         </div>
       </div>
 
-      <div>
-        <h2 class="font-headline font-black text-lg text-white uppercase tracking-tight">"NIVELES" (Snippet)</h2>
-        <p class="text-xs text-zinc-400">Escucha sin salir del enlace</p>
-      </div>
+      <!-- Columna Latest Drop Visualizer -->
+      <div class="lg:col-span-5">
+        <div class="bg-kngCard border border-kngBorder rounded-2xl p-5 shadow-2xl space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-black uppercase tracking-widest text-kngRed flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-kngRed animate-ping"></span> LATEST DROP
+            </span>
+            <span class="text-[10px] text-zinc-500 font-bold uppercase">OUT NOW</span>
+          </div>
 
-      <!-- Elemento Audio Oculto (Reemplaza 'src' por tu enlace directo de MP3) -->
-      <audio id="nativeAudio" preload="metadata">
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-        Tu navegador no soporta reproducción de audio.
-      </audio>
+          <!-- Video Embebido Responsivo -->
+          <div class="relative w-full pb-[56.25%] rounded-xl overflow-hidden border border-kngBorder bg-black">
+            <iframe 
+              class="absolute top-0 left-0 w-full h-full"
+              src="https://www.youtube-nocookie.com/embed/XFfWyykCw_s?rel=0" 
+              title="KNG_CARLY Drop" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
 
-      <!-- Controles Personalizados -->
-      <div class="space-y-2 pt-1">
-        <div class="flex items-center gap-3">
-          <button id="playBtn" onclick="toggleAudio()" class="w-11 h-11 rounded-xl bg-kngRed hover:bg-red-700 text-white flex items-center justify-center transition shadow-lg shadow-kngRed/30 flex-shrink-0">
-            <i id="playIcon" class="fa-solid fa-play text-sm ml-0.5"></i>
-          </button>
-          
-          <div class="flex-1 space-y-1">
-            <input id="progressBar" type="range" value="0" min="0" max="100" class="w-full h-1 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-kngRed">
-            <div class="flex justify-between text-[10px] font-mono text-zinc-500">
-              <span id="currentTime">0:00</span>
-              <span id="durationTime">0:00</span>
+          <div class="flex items-center justify-between pt-1">
+            <div>
+              <h3 class="font-headline font-black text-xl text-white uppercase tracking-tight">"NIVELES"</h3>
+              <p class="text-xs text-zinc-400 font-medium">KNG_CARLY</p>
             </div>
+            <a href="https://open.spotify.com/artist/30G2H8ztahiXqfKm7Xa8GQ" target="_blank" rel="noopener" class="bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-600 hover:text-white px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5">
+              <i class="fa-brands fa-spotify"></i> Abrir
+            </a>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- ÚLTIMO VIDEO / VISUALIZER EMBEBIDO (YouTube) -->
-    <section class="bg-kngCard border border-kngBorder rounded-2xl p-4 shadow-xl space-y-3">
-      <div class="flex items-center justify-between">
-        <span class="text-[10px] font-bold uppercase tracking-widest text-zinc-400">VISUALIZER OFICIAL</span>
-        <span class="text-[10px] font-bold uppercase text-kngRed">OUT NOW</span>
+    </div>
+  </section>
+
+  <!-- SMART LINKS / LINK-IN-BIO SECTION -->
+  <section id="quick-links" class="max-w-3xl mx-auto px-4 py-10 space-y-3">
+    <div class="text-center pb-2">
+      <h2 class="font-headline font-black text-2xl uppercase tracking-wider text-white">ENLACES RÁPIDOS</h2>
+      <p class="text-xs text-zinc-500 uppercase tracking-widest font-semibold">Streaming, Redes & Plataformas</p>
+    </div>
+
+    <a href="https://open.spotify.com/artist/30G2H8ztahiXqfKm7Xa8GQ" target="_blank" rel="noopener" class="flex items-center justify-between p-3.5 rounded-xl bg-kngCard border border-kngBorder hover:border-green-500/60 transition group shadow-sm">
+      <div class="flex items-center gap-3.5">
+        <i class="fa-brands fa-spotify text-green-500 text-2xl group-hover:scale-110 transition"></i>
+        <div class="text-left">
+          <span class="block text-sm font-bold text-white leading-tight">Perfil Oficial en Spotify</span>
+          <span class="text-[11px] text-zinc-400">Escucha todos los singles y releases</span>
+        </div>
+      </div>
+      <i class="fa-solid fa-arrow-up-right-from-square text-zinc-600 group-hover:text-green-500 text-xs"></i>
+    </a>
+
+    <a href="https://music.apple.com/us/artist/kng-carly/1862196988" target="_blank" rel="noopener" class="flex items-center justify-between p-3.5 rounded-xl bg-kngCard border border-kngBorder hover:border-zinc-400 transition group shadow-sm">
+      <div class="flex items-center gap-3.5">
+        <i class="fa-brands fa-apple text-white text-2xl group-hover:scale-110 transition"></i>
+        <div class="text-left">
+          <span class="block text-sm font-bold text-white leading-tight">Apple Music</span>
+          <span class="text-[11px] text-zinc-400">Streaming en audio espacial</span>
+        </div>
+      </div>
+      <i class="fa-solid fa-arrow-up-right-from-square text-zinc-600 group-hover:text-white text-xs"></i>
+    </a>
+
+    <a href="https://www.tiktok.com/@kng_carly" target="_blank" rel="noopener" class="flex items-center justify-between p-3.5 rounded-xl bg-kngCard border border-kngBorder hover:border-cyan-400/60 transition group shadow-sm">
+      <div class="flex items-center gap-3.5">
+        <i class="fa-brands fa-tiktok text-cyan-400 text-2xl group-hover:scale-110 transition"></i>
+        <div class="text-left">
+          <span class="block text-sm font-bold text-white leading-tight">TikTok Oficial (@kng_carly)</span>
+          <span class="text-[11px] text-zinc-400">Previews inéditos y contenido en vivo</span>
+        </div>
+      </div>
+      <i class="fa-solid fa-arrow-up-right-from-square text-zinc-600 group-hover:text-cyan-400 text-xs"></i>
+    </a>
+
+    <a href="https://artists.bandsintown.com/artists/15656333/home" target="_blank" rel="noopener" class="flex items-center justify-between p-3.5 rounded-xl bg-kngCard border border-kngBorder hover:border-cyan-500/60 transition group shadow-sm">
+      <div class="flex items-center gap-3.5">
+        <i class="fa-solid fa-calendar-check text-cyan-500 text-xl group-hover:scale-110 transition"></i>
+        <div class="text-left">
+          <span class="block text-sm font-bold text-white leading-tight">Bandsintown Oficial</span>
+          <span class="text-[11px] text-zinc-400">Fechas de shows y presentaciones en directo</span>
+        </div>
+      </div>
+      <i class="fa-solid fa-arrow-up-right-from-square text-zinc-600 group-hover:text-cyan-500 text-xs"></i>
+    </a>
+  </section>
+
+  <!-- CATÁLOGO AUTO-ACTUALIZABLE (Spotify Embed) -->
+  <section id="music" class="max-w-7xl mx-auto px-4 lg:px-8 py-10 space-y-6">
+    <div class="flex items-center justify-between border-b border-kngBorder pb-4">
+      <div>
+        <h2 class="font-headline font-black text-3xl sm:text-4xl uppercase tracking-tight text-white">DISCOGRAFÍA OFICIAL</h2>
+        <p class="text-xs text-zinc-400">Sincronización directa con plataformas</p>
+      </div>
+      <span class="text-[10px] font-bold uppercase tracking-widest text-emerald-400 bg-emerald-950/50 border border-emerald-800/40 px-2 py-1 rounded">Live Sync</span>
+    </div>
+
+    <div class="w-full rounded-2xl overflow-hidden border border-kngBorder bg-black shadow-2xl">
+      <iframe 
+        style="border-radius:12px" 
+        src="https://open.spotify.com/embed/artist/30G2H8ztahiXqfKm7Xa8GQ?utm_source=generator&theme=0" 
+        width="100%" 
+        height="352" 
+        frameBorder="0" 
+        allowfullscreen="" 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+        loading="lazy">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- KNG GALLERY -->
+  <section id="gallery" class="max-w-7xl mx-auto px-4 lg:px-8 py-10 space-y-6">
+    <div class="flex items-center justify-between border-b border-kngBorder pb-4">
+      <div>
+        <h2 class="font-headline font-black text-3xl sm:text-4xl uppercase tracking-tight text-white">KNG GALLERY</h2>
+        <p class="text-xs text-zinc-400">Visuales, sesiones de estudio y estética urbana</p>
+      </div>
+      <a href="https://www.instagram.com/kng_carly_/" target="_blank" rel="noopener" class="text-xs font-bold text-pink-500 hover:underline uppercase">Instagram &rarr;</a>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+      <div class="aspect-square rounded-xl overflow-hidden bg-zinc-900 border border-kngBorder relative group">
+        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&q=80" alt="Session" class="w-full h-full object-cover filter grayscale contrast-125 group-hover:scale-110 group-hover:grayscale-0 transition duration-500">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition p-3 flex items-end">
+          <span class="text-[11px] font-bold uppercase text-white tracking-wider">Studio Sessions</span>
+        </div>
       </div>
 
-      <div class="relative w-full pb-[56.25%] rounded-xl overflow-hidden border border-kngBorder bg-black">
-        <iframe 
-          class="absolute top-0 left-0 w-full h-full"
-          src="https://www.youtube-nocookie.com/embed/XFfWyykCw_s?rel=0" 
-          title="KNG_CARLY Visualizer" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
-      </div>
-    </section>
-
-    <!-- SMART LINKS / PLATAFORMAS DE STREAMING -->
-    <section class="space-y-3">
-      <div class="text-center pb-1">
-        <h3 class="font-headline font-black text-sm uppercase tracking-wider text-zinc-300">PLATAFORMAS & REDES</h3>
+      <div class="aspect-square rounded-xl overflow-hidden bg-zinc-900 border border-kngBorder relative group">
+        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&q=80" alt="Drill Stage" class="w-full h-full object-cover filter grayscale contrast-125 group-hover:scale-110 group-hover:grayscale-0 transition duration-500">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition p-3 flex items-end">
+          <span class="text-[11px] font-bold uppercase text-white tracking-wider">Live Aesthetic</span>
+        </div>
       </div>
 
-      <a href="https://open.spotify.com/intl-es/artist/30G2H8ztahiXqfKm7Xa8GQ" target="_blank" rel="noopener" class="flex items-center justify-between p-3.5 rounded-xl bg-kngCard border border-kngBorder hover:border-emerald-500/60 transition group">
-        <div class="flex items-center gap-3.5">
-          <i class="fa-brands fa-spotify text-emerald-400 text-2xl group-hover:scale-110 transition"></i>
-          <div class="text-left">
-            <span class="block text-sm font-bold text-white leading-tight">Spotify</span>
-            <span class="text-[11px] text-zinc-400">Perfil verificado y catálogo completo</span>
-          </div>
+      <div class="aspect-square rounded-xl overflow-hidden bg-zinc-900 border border-kngBorder relative group">
+        <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=600&q=80" alt="Street" class="w-full h-full object-cover filter grayscale contrast-125 group-hover:scale-110 group-hover:grayscale-0 transition duration-500">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition p-3 flex items-end">
+          <span class="text-[11px] font-bold uppercase text-white tracking-wider">Street Concept</span>
         </div>
-        <i class="fa-solid fa-arrow-up-right-from-square text-zinc-600 group-hover:text-emerald-400 text-xs"></i>
-      </a>
-
-      <a href="https://music.apple.com/us/artist/kng-carly/1862196988" target="_blank" rel="noopener" class="flex items-center justify-between p-3.5 rounded-xl bg-kngCard border border-kngBorder hover:border-zinc-400 transition group">
-        <div class="flex items-center gap-3.5">
-          <i class="fa-brands fa-apple text-white text-2xl group-hover:scale-110 transition"></i>
-          <div class="text-left">
-            <span class="block text-sm font-bold text-white leading-tight">Apple Music</span>
-            <span class="text-[11px] text-zinc-400">Audio Lossless & Spatial</span>
-          </div>
-        </div>
-        <i class="fa-solid fa-arrow-up-right-from-square text-zinc-600 group-hover:text-white text-xs"></i>
-      </a>
-
-      <a href="https://www.youtube.com/@THE_KNG_CARLY?sub_confirmation=1" target="_blank" rel="noopener" class="flex items-center justify-between p-3.5 rounded-xl bg-kngCard border border-kngBorder hover:border-red-500/60 transition group">
-        <div class="flex items-center gap-3.5">
-          <i class="fa-brands fa-youtube text-red-500 text-xl group-hover:scale-110 transition"></i>
-          <div class="text-left">
-            <span class="block text-sm font-bold text-white leading-tight">YouTube Oficial</span>
-            <span class="text-[11px] text-zinc-400">Visualizers, videos y Premieres</span>
-          </div>
-        </div>
-        <i class="fa-solid fa-arrow-up-right-from-square text-zinc-600 group-hover:text-red-500 text-xs"></i>
-      </a>
-
-      <a href="https://www.tiktok.com/@kng_carly" target="_blank" rel="noopener" class="flex items-center justify-between p-3.5 rounded-xl bg-kngCard border border-kngBorder hover:border-cyan-400/60 transition group">
-        <div class="flex items-center gap-3.5">
-          <i class="fa-brands fa-tiktok text-cyan-400 text-xl group-hover:scale-110 transition"></i>
-          <div class="text-left">
-            <span class="block text-sm font-bold text-white leading-tight">TikTok (@kng_carly)</span>
-            <span class="text-[11px] text-zinc-400">Previews en vivo y clips de estudio</span>
-          </div>
-        </div>
-        <i class="fa-solid fa-arrow-up-right-from-square text-zinc-600 group-hover:text-cyan-400 text-xs"></i>
-      </a>
-
-      <a href="https://artists.bandsintown.com/artists/15656333/home" target="_blank" rel="noopener" class="flex items-center justify-between p-3.5 rounded-xl bg-kngCard border border-kngBorder hover:border-cyan-500/60 transition group">
-        <div class="flex items-center gap-3.5">
-          <i class="fa-solid fa-calendar-check text-cyan-500 text-lg group-hover:scale-110 transition"></i>
-          <div class="text-left">
-            <span class="block text-sm font-bold text-white leading-tight">Bandsintown</span>
-            <span class="text-[11px] text-zinc-400">Fechas de shows y directos</span>
-          </div>
-        </div>
-        <i class="fa-solid fa-arrow-up-right-from-square text-zinc-600 group-hover:text-cyan-500 text-xs"></i>
-      </a>
-    </section>
-
-    <!-- DISCOGRAFÍA EMBEBIDA (SPOTIFY EMBED) -->
-    <section class="space-y-3">
-      <div class="flex items-center justify-between px-1">
-        <span class="font-headline font-bold text-xs uppercase tracking-wider text-zinc-400">DISCOGRAFÍA EN SPOTIFY</span>
-        <span class="text-[10px] font-bold uppercase tracking-widest text-emerald-400 bg-emerald-950/40 border border-emerald-800/40 px-2 py-0.5 rounded">Live Sync</span>
       </div>
-      <div class="w-full rounded-2xl overflow-hidden border border-kngBorder bg-black shadow-xl">
-        <iframe 
-          style="border-radius:12px" 
-          src="https://open.spotify.com/embed/artist/30G2H8ztahiXqfKm7Xa8GQ?utm_source=generator&theme=0" 
-          width="100%" 
-          height="352" 
-          frameBorder="0" 
-          allowfullscreen="" 
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-          loading="lazy">
-        </iframe>
-      </div>
-    </section>
 
-    <!-- BOOKING DIRECTO -->
-    <section class="bg-kngCard border border-kngBorder rounded-2xl p-4 text-center space-y-3">
-      <h4 class="font-headline font-black text-xs uppercase tracking-widest text-zinc-400">MANAGEMENT & BOOKING</h4>
-      <div class="flex flex-col sm:flex-row gap-2 justify-center">
-        <a href="mailto:booking@kngcarly.com" class="p-2.5 bg-zinc-900 border border-kngBorder rounded-xl text-xs font-semibold hover:border-kngRed transition flex items-center justify-center gap-2">
+      <div class="aspect-square rounded-xl overflow-hidden bg-zinc-900 border border-kngBorder relative group">
+        <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&q=80" alt="Visuals" class="w-full h-full object-cover filter grayscale contrast-125 group-hover:scale-110 group-hover:grayscale-0 transition duration-500">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition p-3 flex items-end">
+          <span class="text-[11px] font-bold uppercase text-white tracking-wider">Visualizers</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KINGDOM PASS / VIP MEMBERSHIP -->
+  <section id="kingdom-pass" class="max-w-7xl mx-auto px-4 lg:px-8 py-10">
+    <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-kngCard via-zinc-950 to-kngCard border border-kngRed/40 relative overflow-hidden shadow-2xl">
+      <div class="relative z-10 max-w-2xl space-y-4">
+        <span class="bg-kngRed text-white text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded">
+          MEMBRESÍA VIP
+        </span>
+        <h2 class="font-headline font-black text-4xl sm:text-5xl uppercase tracking-tight text-white">
+          THE KINGDOM PASS
+        </h2>
+        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed">
+          Acceso prioritario a demos inéditos, descargas de drops antes del estreno global, stems de producción y sorteos exclusivos para la comunidad real.
+        </p>
+
+        <form onsubmit="event.preventDefault(); alert('Gracias por registrarte a The Kingdom. Te contactaremos con los primeros accesos.');" class="flex flex-col sm:flex-row gap-2 pt-2">
+          <input type="email" required placeholder="Tu correo electrónico..." class="bg-zinc-900 border border-kngBorder rounded-xl px-4 py-3 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-kngRed w-full sm:w-80">
+          <button type="submit" class="bg-kngRed hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-xl transition shadow-lg shadow-kngRed/30">
+            Obtener Acceso
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING & MANAGEMENT -->
+  <section id="contact" class="max-w-7xl mx-auto px-4 lg:px-8 py-8 border-t border-kngBorder">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+      <div>
+        <h3 class="font-headline font-black text-2xl uppercase text-white">MANAGEMENT & CONTACTO</h3>
+        <p class="text-xs text-zinc-400 mt-1">Contrataciones, producción, colaboraciones y licencias comerciales:</p>
+      </div>
+      <div class="flex flex-wrap gap-3 md:justify-end">
+        <a href="mailto:booking@kngcarly.com" class="p-3 bg-kngCard border border-kngBorder rounded-xl text-xs font-semibold hover:border-kngRed transition flex items-center gap-2">
           <i class="fa-solid fa-envelope text-kngRed"></i> booking@kngcarly.com
         </a>
-        <a href="https://wa.me/13056804785" target="_blank" rel="noopener" class="p-2.5 bg-zinc-900 border border-kngBorder rounded-xl text-xs font-semibold hover:border-emerald-500 transition flex items-center justify-center gap-2">
-          <i class="fa-brands fa-whatsapp text-emerald-400"></i> WhatsApp Booking
+        <a href="mailto:info@kngcarly.com" class="p-3 bg-kngCard border border-kngBorder rounded-xl text-xs font-semibold hover:border-zinc-300 transition flex items-center gap-2">
+          <i class="fa-solid fa-envelope text-zinc-400"></i> info@kngcarly.com
+        </a>
+        <a href="https://wa.me/13056804785" target="_blank" rel="noopener" class="p-3 bg-kngCard border border-kngBorder rounded-xl text-xs font-semibold hover:border-green-500 transition flex items-center gap-2">
+          <i class="fa-brands fa-whatsapp text-green-500"></i> +1 (305) 680-4785
         </a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- FOOTER -->
-    <footer class="text-center text-[11px] text-zinc-600 font-mono pt-4 space-y-2">
-      <div class="flex justify-center gap-4 text-zinc-500 text-sm">
-        <a href="https://www.instagram.com/kng_carly_/" target="_blank" rel="noopener" class="hover:text-pink-500 transition"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://x.com/KNGCARLY_MUSIC" target="_blank" rel="noopener" class="hover:text-white transition"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=61586276647304" target="_blank" rel="noopener" class="hover:text-blue-500 transition"><i class="fa-brands fa-facebook"></i></a>
+  <!-- FOOTER -->
+  <footer class="border-t border-kngBorder/80 py-8 text-center text-xs text-zinc-500 space-y-3">
+    <div class="flex justify-center gap-4 text-zinc-400 text-base">
+      <a href="https://www.tiktok.com/@kng_carly" target="_blank" rel="noopener" class="hover:text-cyan-400 transition"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="https://www.instagram.com/kng_carly_/" target="_blank" rel="noopener" class="hover:text-pink-500 transition"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://x.com/KNGCARLY_MUSIC" target="_blank" rel="noopener" class="hover:text-white transition"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61586276647304" target="_blank" rel="noopener" class="hover:text-blue-500 transition"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://www.youtube.com/@THE_KNG_CARLY" target="_blank" rel="noopener" class="hover:text-red-500 transition"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+    <p>&copy; 2026 KNG_CARLY. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- STICKY FOOTER AUDIO PLAYER -->
+  <div class="fixed bottom-0 left-0 w-full bg-black/95 border-t border-kngBorder backdrop-blur-md px-4 py-3 z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+      
+      <!-- Track Info -->
+      <div class="flex items-center gap-3 min-w-0">
+        <div class="w-10 h-10 rounded-lg bg-zinc-900 border border-kngBorder flex-shrink-0 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=100&q=80" alt="Cover" class="w-full h-full object-cover">
+        </div>
+        <div class="truncate">
+          <p class="font-headline font-black text-xs sm:text-sm uppercase text-white tracking-wide truncate">NIVELES - KNG_CARLY</p>
+          <span class="text-[10px] text-kngRed font-bold uppercase tracking-widest block leading-tight">OUT NOW</span>
+        </div>
       </div>
-      <p>&copy; 2026 KNG_CARLY. kngcarly.com</p>
-    </footer>
 
-  </main>
+      <!-- Controls & Simulated Waveform -->
+      <div class="hidden sm:flex items-center gap-4">
+        <button class="text-zinc-400 hover:text-white transition"><i class="fa-solid fa-backward-step text-xs"></i></button>
+        <a href="https://open.spotify.com/artist/30G2H8ztahiXqfKm7Xa8GQ" target="_blank" rel="noopener" class="w-8 h-8 rounded-full bg-kngRed text-white flex items-center justify-center hover:scale-105 transition shadow-sm">
+          <i class="fa-solid fa-play text-xs ml-0.5"></i>
+        </a>
+        <button class="text-zinc-400 hover:text-white transition"><i class="fa-solid fa-forward-step text-xs"></i></button>
 
-  <!-- LÓGICA DEL REPRODUCTOR NATIVO -->
-  <script>
-    const audio = document.getElementById('nativeAudio');
-    const playBtn = document.getElementById('playBtn');
-    const playIcon = document.getElementById('playIcon');
-    const progressBar = document.getElementById('progressBar');
-    const currentTimeEl = document.getElementById('currentTime');
-    const durationTimeEl = document.getElementById('durationTime');
-    const eq = document.getElementById('equalizer');
+        <!-- Waveform Simulation -->
+        <div class="flex items-center gap-1 px-3">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
 
-    function formatTime(seconds) {
-      if (isNaN(seconds)) return "0:00";
-      const mins = Math.floor(seconds / 60);
-      const secs = Math.floor(seconds % 60);
-      return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
-    }
+      <!-- Quick Action Right -->
+      <div class="flex items-center gap-2 flex-shrink-0">
+        <a href="https://open.spotify.com/artist/30G2H8ztahiXqfKm7Xa8GQ" target="_blank" rel="noopener" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] uppercase tracking-wider px-3 py-1.5 rounded-lg transition flex items-center gap-1.5">
+          <i class="fa-brands fa-spotify"></i> <span class="hidden xs:inline">Spotify</span>
+        </a>
+      </div>
 
-    function toggleAudio() {
-      if (audio.paused) {
-        audio.play();
-        playIcon.classList.remove('fa-play');
-        playIcon.classList.add('fa-pause');
-        eq.classList.add('playing');
-      } else {
-        audio.pause();
-        playIcon.classList.remove('fa-pause');
-        playIcon.classList.add('fa-play');
-        eq.classList.remove('playing');
-      }
-    }
-
-    audio.addEventListener('loadedmetadata', () => {
-      durationTimeEl.innerText = formatTime(audio.duration);
-    });
-
-    audio.addEventListener('timeupdate', () => {
-      if (!isNaN(audio.duration)) {
-        const progress = (audio.currentTime / audio.duration) * 100;
-        progressBar.value = progress;
-        currentTimeEl.innerText = formatTime(audio.currentTime);
-      }
-    });
-
-    progressBar.addEventListener('input', () => {
-      if (!isNaN(audio.duration)) {
-        const seekTime = (progressBar.value / 100) * audio.duration;
-        audio.currentTime = seekTime;
-      }
-    });
-
-    audio.addEventListener('ended', () => {
-      playIcon.classList.remove('fa-pause');
-      playIcon.classList.add('fa-play');
-      eq.classList.remove('playing');
-      progressBar.value = 0;
-      currentTimeEl.innerText = "0:00";
-    });
-  </script>
+    </div>
+  </div>
 
 </body>
 </html>
